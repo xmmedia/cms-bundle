@@ -1,0 +1,64 @@
+{
+  "name": "xm/cms-bundle",
+  "description": "CMS used for building websites at XM Media. Based on Symfony.",
+  "type": "symfony-bundle",
+  "homepage": "https://github.com/xmmedia/XMCmsBundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Darryl Hein",
+      "email": "dhein@xmmedia.com"
+    }
+  ],
+  "require": {
+    "php": "^7.3",
+    "ext-json": "*",
+    "doctrine/doctrine-bundle": "^2.0",
+    "doctrine/orm": "^2.5",
+    "egulias/email-validator": "^2.1",
+    "marc-mabe/php-enum": "^4.1",
+    "nesbot/carbon": "^2.24",
+    "overblog/graphql-bundle": "^0.12.3 || ^0.13.0",
+    "prooph/event-store-bus-bridge": "^3.3",
+    "prooph/event-store-symfony-bundle": "^0.6.0 || ^0.7.0 || ^0.8.0",
+    "prooph/pdo-event-store": "^1.11",
+    "ramsey/uuid": "^3.7.3 || ^4.0",
+    "ramsey/uuid-doctrine": "^1.5",
+    "symfony/framework-bundle": "^5.0",
+    "symfony/messenger": "^5.0",
+    "symfony/security-bundle": "^5.0",
+    "wildbit/postmark-php": "^2.8"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.13",
+    "fzaninotto/faker": "^1.8",
+    "mockery/mockery": "^1.2",
+    "phpstan/phpstan": "^0.12",
+    "phpstan/phpstan-mockery": "^0.12",
+    "phpstan/phpstan-phpunit": "^0.12",
+    "phpstan/phpstan-symfony": "^0.12",
+    "phpstan/phpstan-webmozart-assert": "^0.12",
+    "phpunit/phpunit": "^8.0",
+    "symfony/debug-pack": "^1.0.0",
+    "symfony/phpunit-bridge": "^5.0",
+    "symfony/test-pack": "^1.0.0"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Xm\\CmsBundle\\": ""
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "scripts": {
+    "test": "vendor/bin/simple-phpunit",
+    "test:coverage": "vendor/bin/simple-phpunit --coverage-html coverage",
+    "cs": "php-cs-fixer fix -v --dry-run --config=php_cs.dist",
+    "cs:fix": "php-cs-fixer fix -v --config=php_cs.dist",
+    "static": "php -d memory_limit=-1 vendor/bin/phpstan analyse"
+  }
+}

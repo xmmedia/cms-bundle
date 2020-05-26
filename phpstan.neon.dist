@@ -1,0 +1,13 @@
+includes:
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+    - vendor/phpstan/phpstan-webmozart-assert/extension.neon
+#    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-mockery/extension.neon
+
+parameters:
+    level: 0
+    paths:
+        - .
+    excludes_analyse:
+        - vendor
